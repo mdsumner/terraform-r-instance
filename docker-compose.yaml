@@ -1,0 +1,11 @@
+services:
+  rocker:
+#    image: ghcr.io/rocker-org/geospatial:dev-osgeo
+    build: .
+    ports:
+      - 8787:8787
+    volumes:
+      - /perm_storage/home/gdal/Git:/home/rstudio/data
+    environment:
+      - PASSWORD=yourpassword
+    restart: always
